@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><_DashBoard/></title>
-    <script src="js/weather.js"></script>
+    <script src="js/script.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css" />
 </head>
 <body>
@@ -12,7 +14,7 @@
     <div id="today">
         <div id="now">
             <div class="img-wrapper">
-                <p>Amberg lat / lon / day / time</p>
+                <p id="headline">Amberg lat / lon / day / time</p>
                 <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather">
             </div>
             <div class="details">
@@ -21,44 +23,44 @@
                     <h2 class="hum">65%</h2>
                 </div>
                 <div>
-                    <h3>20km/h NE</h4>
+                    <h3 class="wind">20km/h NE</h4>
                     <h3>humidity</h3>
                 </div>
                 <div>
                     <div>
-                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather">
+                        <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="weather">
                         <h4 class="sunrise">7:30</h4>
                     </div>
                     <div>
-                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather">
+                        <img src="https://openweathermap.org/img/wn/01n@2x.png" alt="weather">
                         <h4 class="sunset">17:30</h4>
                     </div>
                 </div>
             </div>
         </div>
         <div id="later">
-            <div class="three">
+            <div class="h3">
                 <h3>+3h</h3>
                 <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather">
                 <h4 class="weather">cloudy</h4>
-                <h4 class="max">max: 7°C</h4>
-                <h4 class="min">min: 3°C</h4>
+                <h4 class="temp">max: 7°C</h4>
+                <h4 class="feel">min: 3°C</h4>
                 <h4 class="hum">hum: 45%</h4>
             </div>
-            <div class="six">
+            <div class="h6">
                 <h3>+6h</h3>
                 <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather">
                 <h4 class="weather">cloudy</h4>
-                <h4 class="max">max: 7°C</h4>
-                <h4 class="min">min: 3°C</h4>
+                <h4 class="temp">max: 7°C</h4>
+                <h4 class="feel">min: 3°C</h4>
                 <h4 class="hum">hum: 45%</h4>
             </div>
-            <div class="twelve">
+            <div class="h12">
                 <h3>+12h</h3>
                 <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather">
                 <h4 class="weather">cloudy</h4>
-                <h4 class="max">max: 7°C</h4>
-                <h4 class="min">min: 3°C</h4>
+                <h4 class="temp">max: 7°C</h4>
+                <h4 class="feel">min: 3°C</h4>
                 <h4 class="hum">hum: 45%</h4>
             </div>
         </div>

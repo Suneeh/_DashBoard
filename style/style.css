@@ -2,11 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
 }
 body {
   min-height: 100vh;
   max-height: 100vh;
   width: 100vw;
+  background: #ffe4cc;
 }
 body h2 {
   font-size: 3rem;
@@ -19,6 +21,7 @@ body h4 {
 }
 body img {
   height: 7rem;
+  filter: drop-shadow(0 0 0.5rem gray);
 }
 body #upper {
   display: flex;
@@ -62,10 +65,14 @@ body #upper #today #later {
   justify-content: space-evenly;
 }
 body #upper #forecast {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   flex: 1;
   border-bottom: 2px solid gray;
 }
 body #upper #forecast .day {
+  justify-content: space-evenly;
   display: flex;
   align-items: center;
 }
@@ -89,6 +96,7 @@ body #downer #local {
   flex: 1;
   border-right: 2px solid gray;
   display: flex;
+  align-items: center;
 }
 body #downer #local div {
   flex: 1;
