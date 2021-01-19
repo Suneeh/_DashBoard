@@ -38,7 +38,6 @@ export function setValues(){
             document.querySelector(`#later .h${cnt} .hum`).textContent = `Humidity ${w.hourly[cnt].humidity}%`;
         });
         document.querySelectorAll('#forecast .day').forEach(function(i, j){
-            console.log(i);
             j += 1;
             let day = new Date(w.daily[j].dt*1000);
             day = day.toLocaleDateString('en-US',{weekday: 'long'});

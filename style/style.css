@@ -9,6 +9,7 @@ body {
   max-height: 100vh;
   width: 100vw;
   background: #ffe4cc;
+  position: relative;
 }
 body h2 {
   font-size: 3rem;
@@ -23,18 +24,23 @@ body img {
   height: 7rem;
   filter: drop-shadow(0 0 0.5rem gray);
 }
+body #headline {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+}
 body #upper {
   display: flex;
   height: 75vh;
 }
 body #upper #today {
-  border-right: 2px solid gray;
-  border-bottom: 2px solid gray;
   flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 body #upper #today #now {
   display: flex;
-  border-bottom: 2px solid gray;
 }
 body #upper #today #now .img-wrapper {
   display: flex;
@@ -69,7 +75,6 @@ body #upper #forecast {
   flex-direction: column;
   justify-content: space-evenly;
   flex: 1;
-  border-bottom: 2px solid gray;
 }
 body #upper #forecast .day {
   justify-content: space-evenly;
@@ -81,8 +86,14 @@ body #upper #quotes {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border-left: 2px solid gray;
-  border-bottom: 2px solid gray;
+  align-items: center;
+}
+body #upper #quotes .quote {
+  display: flex;
+  justify-content: center;
+}
+body #upper #quotes .quote span {
+  width: 80%;
 }
 body #downer {
   display: flex;
@@ -90,11 +101,9 @@ body #downer {
 }
 body #downer #bav {
   flex: 2;
-  border-right: 2px solid gray;
 }
 body #downer #local {
   flex: 1;
-  border-right: 2px solid gray;
   display: flex;
   align-items: center;
 }
