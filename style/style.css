@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+}
+body h2 {
+  font-size: 3rem;
+}
+body h3 {
+  font-size: 1.5rem;
+}
+body h4 {
+  font-size: 1rem;
+}
+body img {
+  height: 7rem;
+}
+body #upper {
+  display: flex;
+  height: 75vh;
+}
+body #upper #today {
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+  flex: 2;
+}
+body #upper #today #now {
+  display: flex;
+  border-bottom: 2px solid gray;
+}
+body #upper #today #now .img-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+body #upper #today #now .img-wrapper img {
+  height: 10rem;
+}
+body #upper #today #now .details {
+  flex: 2;
+  justify-content: space-evenly;
+}
+body #upper #today #now .details div {
+  display: flex;
+  align-items: center;
+}
+body #upper #today #now .details h2,
+body #upper #today #now .details h3,
+body #upper #today #now .details h4 {
+  width: 40%;
+  text-align: center;
+}
+body #upper #today #later {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+}
+body #upper #forecast {
+  flex: 1;
+  border-bottom: 2px solid gray;
+}
+body #upper #forecast .day {
+  display: flex;
+  align-items: center;
+}
+body #upper #quotes {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-left: 2px solid gray;
+  border-bottom: 2px solid gray;
+}
+body #downer {
+  display: flex;
+  height: 25vh;
+}
+body #downer #bav {
+  flex: 2;
+  border-right: 2px solid gray;
+}
+body #downer #local {
+  flex: 1;
+  border-right: 2px solid gray;
+  display: flex;
+}
+body #downer #local div {
+  flex: 1;
+  text-align: center;
+}
+body #downer #ger {
+  flex: 2;
+}
