@@ -43,6 +43,7 @@ export function setValues(){
             day = day.toLocaleDateString('en-US',{weekday: 'long'});
             i.querySelector('.img-wrapper .name').textContent = `${day}`;
             i.querySelector(`img`).setAttribute('src', `https://openweathermap.org/img/wn/${w.daily[j].weather[0].icon}@2x.png`);
+            i.querySelector(`.weather`).textContent = w.daily[j].weather[0].description;
             i.querySelector(`.max`).textContent = `Temp: ${Math.round(w.daily[j].temp['max'])}°C`;
             i.querySelector(`.min`).textContent = `Feels like ${Math.round(w.daily[j].temp['min'])}°C`;
             i.querySelector(`.hum`).textContent = `Humidity ${w.daily[j].humidity}%`;

@@ -99,8 +99,12 @@ body #downer {
   display: flex;
   height: 25vh;
 }
-body #downer #bav {
+body #downer #bav,
+body #downer #ger {
   flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 body #downer #local {
   flex: 1;
@@ -110,7 +114,4 @@ body #downer #local {
 body #downer #local div {
   flex: 1;
   text-align: center;
-}
-body #downer #ger {
-  flex: 2;
 }
