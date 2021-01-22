@@ -3,7 +3,6 @@
 //lang = de
 //units=metric
 let today = new Date().toLocaleDateString().replaceAll('/','.');
-let now = new Date().toLocaleTimeString();
 let headline = `Amberg, DE ${today}`;
 /*happens without using the api*/
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -44,9 +43,9 @@ export function setValues(){
             i.querySelector('.img-wrapper .name').textContent = `${day}`;
             i.querySelector(`img`).setAttribute('src', `https://openweathermap.org/img/wn/${w.daily[j].weather[0].icon}@2x.png`);
             i.querySelector(`.weather`).textContent = w.daily[j].weather[0].description;
-            i.querySelector(`.max`).textContent = `Temp: ${Math.round(w.daily[j].temp['max'])}°C`;
-            i.querySelector(`.min`).textContent = `Feels like ${Math.round(w.daily[j].temp['min'])}°C`;
-            i.querySelector(`.hum`).textContent = `Humidity ${w.daily[j].humidity}%`;
+            i.querySelector(`.max`).textContent = `Max: ${Math.round(w.daily[j].temp['max'])}°C`;
+            i.querySelector(`.min`).textContent = `Min: ${Math.round(w.daily[j].temp['min'])}°C`;
+            i.querySelector(`.hum`).textContent = `Humidity: ${w.daily[j].humidity}%`;
         });
     }
 }
