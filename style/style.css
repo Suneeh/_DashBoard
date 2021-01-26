@@ -115,3 +115,23 @@ body #downer #local div {
   flex: 1;
   text-align: center;
 }
+body #modal {
+  position: absolute;
+  display: block;
+  background: #ffe4cc;
+  filter: drop-shadow(0 0 0.25rem gray);
+  width: 20%;
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+}
+body #modal #close-modal {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+body #modal .modal-input {
+  width: 50%;
+}

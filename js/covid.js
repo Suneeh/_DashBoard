@@ -17,7 +17,9 @@ Germany Numbers:
 https://interaktiv.tagesspiegel.de/coronadaten/api/countries/DEU/all.json?v=kk75c9e2
 */
 
-
+var days = 14;
+var ID_BY = 9;
+var arr = [];
 export function getCovid(){
     let req1 = new XMLHttpRequest();
     req1.open("GET", url1);
@@ -42,9 +44,6 @@ export function getCovid(){
     req3.send();
     req3.onload = () =>{
         ans = req3.response;
-        let arr = [];
-        let days = 30;
-        let ID_BY = 9;
         let daily = [];
         let daily_DE = Array(days+1).fill(0);
         ans.split("\n").forEach((line, i) => {
@@ -74,8 +73,9 @@ export function getCovid(){
         document.querySelector('#max-de').textContent = `${max_DE} / Tag`;
 
         //shortens the array (+1 because we calc the current day - the day before)
+        
         daily.forEach((x, y)=>{
-            daily[y] = daily[y].slice(daily[y].length-(days+1)); 
+            daily[y] = daily[y].slice(daily[y].length-(days+1), daily[y].length); 
         });
         daily = daily.slice(0,17);
 
@@ -88,7 +88,6 @@ export function getCovid(){
         });
 
         let lookup = arr[0].slice(arr[0].length-(days+1)); 
-        
         //daily = Array for each Bundesland[]= new cases per day
         //max_BY is the max value of the daily[ID_BY] array and will be used in the scale later on
         //max_DE is the max value of the daily[_ALL_] array and will be used in the scale later on
@@ -171,5 +170,45 @@ export function getCovid(){
         }
         cty.stroke(); 
     //end Germany
-    }      
+        fillModal();
+    }
+
+    function fillModal(){
+        //fill modal with data
+        document.getElementById("max-modal").value = days;
+        let select = document.getElementById("states-modal");
+        let option;
+        for(let i = 1; i< arr.length-1; i++){
+            option = document.createElement("option");
+            option.text = arr[i][0];
+            option.value = i;
+            if(i == ID_BY) option.selected = "selected";
+            select.appendChild(option);
+        }
+        
+    }
+    document.getElementById("bav").onclick = function() {
+        document.getElementById("modal").style.display = "block";
+        document.getElementById("modal").style.top = `${event.clientY}px`;
+        document.getElementById("modal").style.left = `${event.clientX}px`;
+    };  
+
+
+    window.onkeyup = function(event) {
+        let key = event.key;
+        if (key == "Escape")         
+            document.getElementById("modal").style.display = "none";
+    }
+
+    document.getElementById("close-modal").onclick = function() {
+        document.getElementById("modal").style.display = "none";
+    }; 
+    document.getElementById("max-modal").onchange = function() {
+        days = Number(document.getElementById("max-modal").value);
+        getCovid();
+    }; 
+    document.getElementById("states-modal").onchange = function() {
+        ID_BY = Number(document.getElementById("states-modal").value);
+        getCovid();
+    };        
 }
