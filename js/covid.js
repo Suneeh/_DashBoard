@@ -188,9 +188,15 @@ export function getCovid(){
         
     }
     document.getElementById("bav").onclick = function() {
-        document.getElementById("modal").style.display = "block";
-        document.getElementById("modal").style.top = `${event.clientY}px`;
-        document.getElementById("modal").style.left = `${event.clientX}px`;
+        let modal = document.getElementById("modal");
+        modal.style.display = "block";
+        if(modal.clientHeight > document.body.clientHeight - event.clientY){
+            modal.style.top = `${document.body.clientHeight - modal.clientHeight -2}px`;
+            modal.style.left = `${event.clientX}px`;
+        }else{
+            modal.style.top = `${event.clientY}px`;
+            modal.style.left = `${event.clientX}px`;
+        }
     };  
 
 
