@@ -1,8 +1,17 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
+  /* latin */
 }
 body {
   min-height: 100vh;
@@ -117,7 +126,7 @@ body #downer #local div {
 }
 body #modal {
   position: absolute;
-  display: block;
+  display: none;
   background: #ffe4cc;
   filter: drop-shadow(0 0 0.25rem gray);
   width: 20%;
