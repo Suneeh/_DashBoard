@@ -17,8 +17,9 @@ body {
   min-height: 100vh;
   max-height: 100vh;
   width: 100vw;
-  background: #ffe4cc;
+  background: #2b2c31;
   position: relative;
+  color: #ffe4cc;
 }
 body h2 {
   font-size: 3rem;
@@ -97,12 +98,13 @@ body #upper #quotes {
   justify-content: space-evenly;
   align-items: center;
 }
-body #upper #quotes .quote {
+body #upper #quotes div {
+  width: 80%;
+}
+body #upper #quotes div .quote {
   display: flex;
   justify-content: center;
-}
-body #upper #quotes .quote span {
-  width: 80%;
+  text-align: center;
 }
 body #downer {
   display: flex;
@@ -127,7 +129,7 @@ body #downer #local div {
 body #modal {
   position: absolute;
   display: none;
-  background: #ffe4cc;
+  background: #2b2c31;
   filter: drop-shadow(0 0 0.25rem gray);
   width: 20%;
   padding: 1rem;

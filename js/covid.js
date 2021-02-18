@@ -106,23 +106,23 @@ export function getCovid(){
         let ctx = canvas1.getContext("2d");
 
         ctx.beginPath();
-        ctx.strokeStyle = "#f4f4f4";
+        ctx.strokeStyle = "#0000006b";
         //drawing vertical grid
         for(let i = 1; i < days; i++){
             ctx.moveTo(Math.round(i/days*c1width), 0);
             ctx.lineTo(Math.round(i/days*c1width), c1height);
-            ctx.stroke();
         }
+        ctx.stroke();
         
         //drawing horizontal grid
         for(let i = 1; i <= 10; i++){
             ctx.moveTo(0, 0.1*i*c1height);
             ctx.lineTo(c1width, 0.1*i*c1height);
-            ctx.stroke();
         }
+        ctx.stroke();
         
         ctx.beginPath();
-        ctx.strokeStyle = "#000000";
+        ctx.strokeStyle = getComputedStyle(document.body).color;
         ctx.lineWidth = 2;
         //drawing the actual graph
         for(let i = 0; i < days; i++){
@@ -143,7 +143,7 @@ export function getCovid(){
 
         let cty = canvas2.getContext("2d");
         cty.beginPath();
-        cty.strokeStyle = "#f4f4f4";
+        cty.strokeStyle = "#0000006b";
         //drawing vertical grid
         for(let i = 1; i < days; i++){
             cty.moveTo(Math.round(i/days*c2width), 0);
@@ -160,7 +160,7 @@ export function getCovid(){
         
 
         cty.beginPath();
-        cty.strokeStyle = "#000000";
+        cty.strokeStyle = getComputedStyle(document.body).color;
         cty.lineWidth = 2;
         //drawing the actual graph
 
