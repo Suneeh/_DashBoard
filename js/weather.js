@@ -17,11 +17,12 @@ export function setValues(){
     let w;
     req.onload = () => {
         w = JSON.parse(req.response);
+        getDirection(w.hourly[0].wind_deg)
         document.querySelector('#now .details .temp').textContent = `${Math.round(w.current.temp)}°C`;
         document.querySelector('#now .details .hum').textContent = `${w.current.humidity}%`;
         document.querySelector('#now .details .sunrise').textContent = new Date(w.current.sunrise*1000).toLocaleTimeString([], {timeStyle: 'short'});
         document.querySelector('#now .details .sunset').textContent = new Date(w.current.sunset*1000).toLocaleTimeString([], {timeStyle: 'short'});
-        document.querySelector('#now .details .wind').textContent = `${Math.round(w.current.wind_speed*3.6)}km/h`;
+        document.querySelector('#now .details .wind').textContent = `${getDirection(w.hourly[0].wind_deg)}   ${Math.round(w.current.wind_speed*3.6)}km/h`;
         document.querySelector('#now .img-wrapper img').setAttribute('src', `https://openweathermap.org/img/wn/${w.current.weather[0].icon}@2x.png`);
         document.querySelector('#later .h3 .weather').textContent = `${w.hourly[3].weather[0].description}`;
         document.querySelector('#later .h3 .temp').textContent = `Temp: ${w.hourly[3].temp}°C`;
@@ -48,4 +49,29 @@ export function setValues(){
             i.querySelector(`.hum`).textContent = `Humidity: ${w.daily[j].humidity}%`;
         });
     }
+}
+
+function getDirection(deg){
+    console.log(deg);
+    deg -= 11.25;
+    switch(true){
+        case deg<= 1/16*360: return 'N';
+        case deg<= 2/16*360: return 'NNO';
+        case deg<= 3/16*360: return 'NO';
+        case deg<= 4/16*360: return 'ONO';
+        case deg<= 5/16*360: return 'O';
+        case deg<= 6/16*360: return 'OSO';
+        case deg<= 7/16*360: return 'SO';
+        case deg<= 8/16*360: return 'SSO';
+        case deg<= 9/16*360: return 'S';
+        case deg<=10/16*360: return 'SSW';
+        case deg<=11/16*360: return 'SW';
+        case deg<=12/16*360: return 'WSW';
+        case deg<=13/16*360: return 'W';
+        case deg<=14/16*360: return 'WNW';
+        case deg<=15/16*360: return 'NW';
+        case deg<=16/16*360: return 'NNW';
+        default: return '';
+    }
+    
 }
