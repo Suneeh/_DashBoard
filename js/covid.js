@@ -1,21 +1,7 @@
-let url1 = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19_Landkreise_Table_Demo_18b5f806160a4aa686ca65819fbe4462/FeatureServer/0/query?f=json&where=county%3D%27SK%20Amberg%27&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=RS%20asc&resultOffset=0&resultRecordCount=1&resultType=standard&cacheHint=true"
-let url2 = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19_Landkreise_Table_Demo_18b5f806160a4aa686ca65819fbe4462/FeatureServer/0/query?f=json&where=county%3D%27SK%20Regensburg%27&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=RS%20asc&resultOffset=0&resultRecordCount=1&resultType=standard&cacheHint=true"
+let url1 = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?f=json&where=AGS%20%3D%20%2709361%27&outFields=*&outSR=4326";
+let url2 = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?f=json&where=AGS%20%3D%20%2709362%27&outFields=*&outSR=4326"
 let url3 = "https://interaktiv.tagesspiegel.de/coronadaten/auto/2PACX-1vRyUgB0oKav_G45ekvLdljpF5Rt3nQVynKcvCN45CiT5ecKEz37NjKzO3w6AYhMWZV54kH_MC7G5wUj.csv?v=kk74npum";
 
-/* Possible sources
-Might be interesting ? : https://www.worldometers.info/coronavirus/country/germany/
-
-Source: https://interaktiv.tagesspiegel.de/lab/karte-sars-cov-2-in-deutschland-landkreise/
-
-all the numbers from march 3rd to jan 21st grouped by Bundesland
-https://interaktiv.tagesspiegel.de/coronadaten/auto/2PACX-1vRyUgB0oKav_G45ekvLdljpF5Rt3nQVynKcvCN45CiT5ecKEz37NjKzO3w6AYhMWZV54kH_MC7G5wUj.csv?v=kk74npum
-
-Bavaria Numbers: 
-https://interaktiv.tagesspiegel.de/coronadaten/api/bundeslaender/09/all.json?v=kk754r7n
-
-Germany Numbers:
-https://interaktiv.tagesspiegel.de/coronadaten/api/countries/DEU/all.json?v=kk75c9e2
-*/
 
 var days = 14;
 var ID_BY = 9;
